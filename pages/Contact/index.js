@@ -5,14 +5,20 @@ import styles from "../../styles/Contact.module.css";
 
 export default function Contact() {
     const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
+    // const [lastName, setLastName] = useState("");
     const [number, setNumber] = useState("");
     const [email, setEmail] = useState("");
 
     const { push } = useRouter();
 
-    function handleSubmit(e) {
-        e.preventDefault();
+    const handleSubmit = event => {
+        event.preventDefault();
+
+        if (!firstName || !number || !email) {
+            return alert('Preencher todos os dados do Formulario de cadastro.');
+        }
+
+        push(`https://api.whatsapp.com/send?phone=558586516133&text=Oi, meu nome é ${firstName} gostaria de realizar o cadastro na Jafra. Número: ${number}. Email: ${email}`)
     }
 
     function handleSendWhatsapp() {
@@ -21,22 +27,22 @@ export default function Contact() {
 
     return (
         <div className={styles.container}>
-            <div className={styles.form}>
-                <form onSubmit={handleSubmit} id="cadastro">
-                    <div>
+            <div id="cadastro" className={styles.form}>
+                <form onSubmit={handleSubmit}>
+                    {/* <div> */}
                         <input 
                             placeholder="Nome" 
                             autoComplete="new-password" 
                             value={firstName} 
                             onChange={(e) => setFirstName(e.target.value)} 
                         />
-                        <input 
+                        {/* <input 
                             placeholder="Sobrenome" 
                             autoComplete="new-password" 
                             value={lastName} 
                             onChange={(e) => setLastName(e.target.value)} 
                         />
-                    </div>
+                    </div> */}
                     
                     <input 
                         placeholder="DDD + Telefone/Whatsapp" 
@@ -50,7 +56,7 @@ export default function Contact() {
                         value={email} 
                         onChange={(e) => setEmail(e.target.value)} 
                     />
-                    <button>Enviar</button>
+                    <button type="submit">Enviar</button>
 
                     <span>Nos comprometemos a não compartilhar suas informações com terceiros.</span>
                 </form>
