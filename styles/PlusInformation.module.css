@@ -1,0 +1,68 @@
+.plusInformationContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: pink;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 50px;
+  /* column-gap: 120px;
+  row-gap: 100px; */
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+
+  width: 220px;
+  height: 220px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: 0.5px solid #ddd;
+
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.card:hover {
+  transition: all 0.5s;
+  transform: translateY(-5px);
+  box-shadow: -1px -1px 29px -14px rgba(0, 0, 0, 0.64);
+  -webkit-box-shadow: -1px -1px 29px -14px rgba(0, 0, 0, 0.64);
+  -moz-box-shadow: -1px -1px 29px -14px rgba(0, 0, 0, 0.64);
+}
+
+.card:not(:hover) {
+  transition: all 0.5s;
+  transform: translateY(5px);
+}
+
+.card span {
+  font-size: 14px;
+  text-align: center;
+}
+
+
+@media (max-width: 511px) {
+  .plusInformationContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200vw;
+    height: 100vh;
+    background-color: pink;
+    /* #BA8E00 */
+  }
+}
