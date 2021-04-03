@@ -58,18 +58,17 @@ export default function Contact() {
                     />
                     <button type="submit">Enviar</button>
 
-                    <span>Nos comprometemos a não compartilhar suas informações com terceiros.</span>
+                    <span className={styles.privacy}>Nos comprometemos a não compartilhar suas informações com terceiros.</span>
                 </form>
             </div>
 
             <div className={styles.profile}>
                 <span className={styles.photo} />
-                <span>imagem</span>
-                <span>imagem</span>
+                <span className={styles.nameProfile}>Marleide Damasceno</span>
             </div>
 
             <div className={styles.whatsapp}>
-                <FaWhatsappSquare color="green" size={50} onClick={handleSendWhatsapp}/>
+                <FaWhatsappSquare color="green" size={50} onClick={handleSendWhatsapp} />
             </div>
         </div>
     );

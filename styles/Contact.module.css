@@ -74,10 +74,14 @@
 .whatsapp {
     z-index: 1000;
     position: fixed;
-    right: 40px;
-    bottom: 40px;
+    right: 20px;
+    bottom: 20px;
 
     cursor: pointer;
+}
+
+.privacy {
+
 }
 
 @media (max-width: 511px) {
@@ -95,11 +99,57 @@
     }
 
     .form {
-        width: 100vw;
+        position: relative;
+    }
+
+    .form form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 180px;
+    
+        width: 100%;
+    }
+
+    .form form input {
+        border: 0;
+        background: #DDD;
+        border-radius: 35px;
+        height: 70px;
+        padding-left: 15px;
+        margin-bottom: 10px;
+        outline: 0;
+
+        font-size: 26px;
+    
+        color: #000000;
+    }
+
+    .form form button {
+        border: 0;
+        outline: 0;
+        background: #BA8E00;
+        border-radius: 35px;
+        height: 70px;
+        cursor: pointer;
+
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+    .privacy {
+        margin-top: 40px;
+        font-size: 16px;
     }
 
     .profile {
         margin-top: 100px;
+    }
+
+    .nameProfile {
+        font-weight: bold;
+        font-size: 24px;
+        margin-top: 20px;
+        margin-bottom: 50px;
     }
 
 }
